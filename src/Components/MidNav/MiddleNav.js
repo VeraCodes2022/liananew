@@ -3,18 +3,13 @@ import styles from './MiddleNav.module.css';
 import {ClientsData} from '../Data/ClientsData';
 import {Employees} from '../Data/EmployeeData';
 import {Users} from '../Data/UserData';
-import getSum from '../Public/Sum';
-import GetQty from '../Public/GetQty';
+import getTotal from '../Public/GetTotal';
 
 function MiddleNav() {
-// calculate the animated number of clients
-  const client=[], employee=[], user=[];
-  GetQty(ClientsData,client)
-  GetQty(Employees,employee)
-  GetQty(Users,user)
-  let clientSum=getSum(client)
-  let employeeSum=getSum(employee)
-  let userSum=getSum(user)
+
+  let clientSum=getTotal(ClientsData)
+  let employeeSum=getTotal(Employees)
+  let userSum=getTotal(Users)
 
 
   return (
