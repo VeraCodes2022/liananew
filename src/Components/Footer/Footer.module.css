@@ -1,0 +1,106 @@
+.content{
+    background-color: #000000; 
+}
+
+.footer{
+    width: 80%;
+    color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:30px;
+    margin: auto;
+}
+.subtitle{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.mesg{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.mesg >p {
+    margin: 5px 0;
+}
+
+.btn{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #4c8930;
+    border: none;
+    color: white;
+    align-self: center;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.right{
+    color: white;
+}
+
+.list{
+    display: flex;
+}
+
+.navtitle{
+    display: flex;
+}
+
+.navtitle > li{
+font-size: 14px;
+margin-left: 20px;
+}
+
+.fb, .tt, .in{
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ background-size:cover;
+}
+
+.fb{
+    background-image: url(./images/fb.png);
+}
+.tt{
+background-image: url(./images/tt.png);
+}
+.in{
+background-image: url('./images/in.png');
+}
+
+.icons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.icons > div {
+    margin-left: 20px;
+}
+
+
+
+
+@media screen and (max-width:800px){
+    .right{
+        margin-top: 30px;
+    }
+    .icons{
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+    .navtitle > li{
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 15px;
+    }
+
+    .icons > div {
+        margin: 0;
+        margin-right: 20px;
+    }
+}

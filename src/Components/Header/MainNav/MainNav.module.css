@@ -1,0 +1,97 @@
+.nav{
+    height: 110px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    color: rgb(151, 152, 150);
+    font-size: 18px;
+    margin: auto;
+}
+
+.logo{
+    flex-grow:20%;
+    width:118px;
+    height:38px;
+    background-image: url('./logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo, .leftNav > li, .search, .btn, .input{
+    align-self: center;
+}
+
+.leftNav, .navbar{
+    display: flex;
+}
+
+.navbar > li {
+    margin-left: 40px;
+    align-self: center;
+   
+}
+ a{
+    text-decoration: none;
+     color: grey;
+}
+.navbar > li :hover{
+    color: black;
+    font-size: 1.2rem;
+}
+
+.search{
+    align-items: flex-end;
+    display: flex;
+}
+
+.input{
+font-size: 18px;
+width: 300px;
+height: 30px;
+border-radius: 5px;
+border: 1px solid rgb(205, 204, 204);
+}
+  
+.btn{
+font-size: 18px;
+color: white;
+background-color: #4c8930;
+border: none;
+height:30px;
+width: 80px;
+border-radius: 5px;
+align-self: center;
+margin-left: 10px;
+}
+
+@media screen and (max-width:800px){
+
+.navbar, .search{
+    display: none;
+    transition: 0.7s;
+}
+
+.leftNav{
+    padding: 5px;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.dots{
+    display: flex;
+
+}
+.dot{
+    width:7px;
+    height:7px;
+    background-color: hsl(101, 48%, 36%,0.7);
+    border-radius: 50%;
+    align-self: center;
+    margin-left:1px;
+}
+
+
+}
+
+
+

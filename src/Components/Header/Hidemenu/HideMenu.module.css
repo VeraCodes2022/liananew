@@ -1,0 +1,54 @@
+
+
+.hidemenu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+    width:50%;
+    height: 100%;
+    padding: 30px;
+    margin: auto;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    top:20px;
+    right:20px;
+}
+
+.navbar{
+    align-self: center;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.navbar > li {
+    /* font-size: 14px; */
+    margin: 0 15px;
+}
+
+.navbar > li > a :hover{
+    color:green;
+    font-size: 1.2rem;
+}
+
+.input{
+width: 250px;
+height: 26px;
+}
+
+
+.btn{
+color: white;
+background-color: #4c8930;
+border: none;
+height:26px;
+width: 80px;
+border-radius: 5px;
+align-self: center;
+margin-left: 10px;
+}

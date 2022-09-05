@@ -1,0 +1,37 @@
+.nav{
+    height: 60px;
+    background-color: #4c8930;
+    color: white;
+}
+
+.wrapper{
+    width:90%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper>p{
+    margin-right: 20px;
+    align-self: center;
+}
+.wrapper>p:hover{
+    font-size: 1.1rem;
+}
+
+.select{
+    width: 178px;
+    height: 32px;
+    border-radius: 5px;
+    border: none;
+    align-self: center;
+    text-align: center;
+}
+
+@media screen and (max-width:800px){
+    .wrapper {
+        justify-content: center;
+        margin: auto;
+    }
+}

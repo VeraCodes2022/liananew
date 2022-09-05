@@ -1,0 +1,113 @@
+.nav{
+color: white;
+}
+
+.cpc{
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+
+.company, .products, .contact{
+    width: 360px;
+    height:220px;   
+    margin: 0 10px;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.company{
+    background-image: url(./images/company.jpeg);
+}
+.products{
+    background-image: url(./images/product.jpeg);
+}
+.contact{
+    background-image: url(./images/contact.jpeg);
+   
+}
+
+.companycover, .productscover, .contctcover{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%, 0.4);
+}
+
+.text{
+    align-self: center;
+}
+
+.clients, .employees, .users{
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-right: 20px;
+    background-size: cover;
+}
+
+.clients{
+    background-image: url(./images/clients.png);
+ 
+}
+.employees{
+   background-image: url(./images/employees.png);
+}
+.users{
+    background-image: url(./images/users.png);
+
+}
+.ceu{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:30px;
+}
+
+.ceu> li {
+    padding:0 60px;
+    display: flex;
+}
+
+.data{
+    color: rgb(124, 121, 121);
+    display: flex;
+    flex-direction: column;
+    font-weight:'Ultra Light';
+    align-self: center;
+}
+
+.num{
+    font-size: 40px;
+}
+
+@media screen and (max-width:800px){
+
+    .company, .products, .contact{
+        margin-bottom: 2px;
+    }
+
+    .ceu {
+        margin-bottom: 30px;
+        padding:10px;
+        justify-content: center;
+    }
+    .ceu >li{
+        margin-top: 20px;
+    }
+    .clients, .employees, .users{
+        width: 20px;
+        height: 20px;
+    }
+    .text{
+        font-size: 15px;
+    }
+    .num{
+        font-size: 20px;
+    }
+}
