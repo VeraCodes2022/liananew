@@ -3,35 +3,19 @@ import styles from './MiddleNav.module.css';
 import {ClientsData} from '../Data/ClientsData';
 import {Employees} from '../Data/EmployeeData';
 import {Users} from '../Data/UserData';
+import getSum from '../Public/Sum';
+import GetQty from '../Public/GetQty';
 
 function MiddleNav() {
 // calculate the animated number of clients
-  const client=[];
-  for(let i=0; i<ClientsData.length;i++){
-    let num=ClientsData[i].number;
-    client.push(num)
-  }
-  let clientSum=client.reduce((prev,curr)=>{
-    return Number(prev)+ Number(curr)
-  });
-// calculate the animated number of employees
-  const employee=[];
-  for(let i=0; i<Employees.length;i++){
-    let num=Employees[i].number;
-    employee.push(num)
-  }
-  let employeeSum=employee.reduce((prev,curr)=>{
-    return Number(prev)+ Number(curr)
-  });
-// calculate the animated number of daily users
-  const user=[];
-  for(let i=0; i<Users.length;i++){
-    let num=Users[i].number;
-    user.push(num)
-  }
-  let userSum=user.reduce((prev,curr)=>{
-      return Number(prev)+ Number(curr)
-    });
+  const client=[], employee=[], user=[];
+  GetQty(ClientsData,client)
+  GetQty(Employees,employee)
+  GetQty(Users,user)
+  let clientSum=getSum(client)
+  let employeeSum=getSum(employee)
+  let userSum=getSum(user)
+
 
   return (
     <div className={styles.nav}>
