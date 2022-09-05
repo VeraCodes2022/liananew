@@ -12,7 +12,7 @@ function App() {
   const [email,setEmail]=useState("");
 
   return (
-    <AppContext.Provider value={{email,setEmail }}>
+    <AppContext.Provider value={{email,setEmail}}>
       <BrowserRouter>
         <Routes>
           <Route path='/' exact='true' element={<Home/>}></Route>

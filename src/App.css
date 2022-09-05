@@ -5,3 +5,11 @@
   list-style: none;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',sans-serif;
 }
+
+input{
+  outline: none;
+}
+
+img{
+  display: block;
+}
