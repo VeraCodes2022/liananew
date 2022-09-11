@@ -11,10 +11,6 @@ var dd=[]
   const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
 
 
-
-
-
-
   useEffect(
 
     ()=>{
@@ -36,18 +32,18 @@ var dd=[]
                       let bb=y[0].getElementsByTagName("description")[0].textContent;
                        aa[i]=cc
                        dd[i]=bb
-
                      }
                   )([items[i]])
-              
-            getXMLData()
             }
-         
+
+
+            getXMLData()
         }
-           
+            
         )
     },[REQUEST_URL]
   )
+
 //  let dates=y.getElementsByTagName("pubDate")[0].textContent; 
 // let desc=y.getElementsByTagName("description")[0].textContent;
 console.log(aa,dd)
