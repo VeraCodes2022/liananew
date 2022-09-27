@@ -1,72 +1,58 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useRef} from 'react';
 import styles from './Latestnews.module.css';
+import  useData  from '../Public/useData';
+import { nanoid } from 'nanoid';
+
 
 function Latestnews() {
-
-var aa=[]
-var dd=[]
-
+  const [times, setTimes]=useState([])
+  const [texts,setTexts]=useState([])
   const BASE_URL = "https://www.lianatech.com/resources/blog.rss";
   const CROSS_DOMAIN = 'https://cors-anywhere.herokuapp.com';
   const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
+  var dateRef=useRef(null);
+  var textRef=useRef(null);
 
 
-  useEffect(
-
-    ()=>{
-        fetch(REQUEST_URL)
-        .then(
-          response=>response.text()
-      )
-        .then(
-            str=>new window.DOMParser().parseFromString(str,"text/xml")
-        )
-        .then (
-          (data)=>{ 
-
-            function getXMLData(){
-              let items=data.getElementsByTagName("item");    
-              for(let i=0;i<items.length;i++)
-                 return (function (y) { 
-                      let cc=y[0].getElementsByTagName("pubDate")[0].textContent;
-                      let bb=y[0].getElementsByTagName("description")[0].textContent;
-                       aa[i]=cc
-                       dd[i]=bb
-                     }
-                  )([items[i]])
-            }
+  var users=[
+    {'date': 'Date1', 'text':'Text1'},
+    {'date': 'Date2', 'text':'Text2'},
+    {'date': 'Date3', 'text':'Text3'},
+    {'date': 'Date4', 'text':'Text4'},
+  ]
 
 
-            getXMLData()
-        }
-            
-        )
-    },[REQUEST_URL]
-  )
+useData(REQUEST_URL)
+.then(
+  results=>{
+    setTimes(results.dates)
+    setTexts(results.dscrpts)
+  }
+)
 
-//  let dates=y.getElementsByTagName("pubDate")[0].textContent; 
-// let desc=y.getElementsByTagName("description")[0].textContent;
-console.log(aa,dd)
+const uniqueTimes=[...new Set(times)]
+const uniqueTexts=[...new Set(texts)];
+var news={}
+
+
+
+// dateRef.current.innerHTML=news;
+// textRef.current.innerHTML=news
+
 
 
   return (
-   
     <div className={styles.content}>
         <p>Latest News</p>
         <ul className={styles.wrapper}>
-        
-          <li>
-            <p className={styles.date}>{}</p>
-            <p className={styles.message}>{}</p>
-          </li>
-          <li>
-            <p className={styles.date}>{}</p>
-            <p className={styles.message}>{}</p>
-          </li>
-          <li>
-            <p className={styles.date}>{}</p>
-            <p className={styles.message}>{}</p>
-          </li>
+     
+            {users.map (
+              user=>{return (<li key={nanoid()}>
+                <p className={styles.date}>{user.date}</p>
+                <p className={styles.message}>{user.text}</p>
+              </li>)}
+            )}
+         
         </ul>
     </div>
   )
@@ -75,3 +61,7 @@ console.log(aa,dd)
 export default Latestnews;
 
 
+//  <p className={styles.date} ref={dateRef}></p>
+//  <p className={styles.message} ref={textRef}></p>
+
+// {uniqueTexts.map(item=>{return <div key={nanoid()}>{item}</div>})}
