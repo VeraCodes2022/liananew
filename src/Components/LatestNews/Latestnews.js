@@ -10,34 +10,38 @@ function Latestnews() {
   const BASE_URL = "https://www.lianatech.com/resources/blog.rss";
   const CROSS_DOMAIN = 'https://cors-anywhere.herokuapp.com';
   const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
-  var dateRef=useRef(null);
-  var textRef=useRef(null);
+  const [data1,setData1]=useState("")
+  const [data2,setData2]=useState("")
+  // var dateRef=useRef(null);
+  // var textRef=useRef(null);
 
-
-  var users=[
-    {'date': 'Date1', 'text':'Text1'},
-    {'date': 'Date2', 'text':'Text2'},
-    {'date': 'Date3', 'text':'Text3'},
-    {'date': 'Date4', 'text':'Text4'},
-  ]
-
-
-useData(REQUEST_URL)
-.then(
-  results=>{
-    setTimes(results.dates)
-    setTexts(results.dscrpts)
-  }
-)
-
-const uniqueTimes=[...new Set(times)]
+  useData(REQUEST_URL)
+  .then(
+    results=>{
+      setTimes(results.dates)
+      setTexts(results.dscrpts)
+    }
+  );
+const uniqueTimes=[...new Set(times)];
 const uniqueTexts=[...new Set(texts)];
-var news={}
 
+var news=[
+  {'time':"", 'text':""}
+]
+function content(){
+  for (let i=0, length=uniqueTexts.length; i< length;i++){
+   (
+    function(x,y){
+      news.time=y
+      news.text=x;
+   
+    }
+   )(uniqueTexts[i],uniqueTimes[i])
+}
+}
+content()
+console.log(news)
 
-
-// dateRef.current.innerHTML=news;
-// textRef.current.innerHTML=news
 
 
 
@@ -46,12 +50,14 @@ var news={}
         <p>Latest News</p>
         <ul className={styles.wrapper}>
      
-            {users.map (
-              user=>{return (<li key={nanoid()}>
-                <p className={styles.date}>{user.date}</p>
-                <p className={styles.message}>{user.text}</p>
-              </li>)}
-            )}
+          {
+            news.map(
+             (item)=>{return <li key={nanoid()}>
+              <p className={styles.date}>{item.time}</p>
+              <p className={styles.message}>{item.text}</p>
+             </li>}
+            )
+          }
          
         </ul>
     </div>
