@@ -16,10 +16,11 @@
    align-self: center;
    display: flex;
    justify-content: center;
+  
 }
 
 .wrapper > li{
-   width:100%;
+   width:25%;
    background-color: white;
    padding: 15px;
    margin:10px;

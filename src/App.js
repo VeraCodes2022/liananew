@@ -8,7 +8,7 @@ import './App.css';
 export const AppContext=createContext(null);
 
 function App() {
-
+    
   const [email,setEmail]=useState("");
 
   return (

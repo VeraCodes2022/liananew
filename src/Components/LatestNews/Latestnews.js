@@ -1,68 +1,62 @@
-import React,{useEffect,useState,useRef} from 'react';
+import React,{useState} from 'react';
 import styles from './Latestnews.module.css';
-import  useData  from '../Public/useData';
+import  {useData}  from '../Public/useData';
 import { nanoid } from 'nanoid';
+import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
 
 function Latestnews() {
   const [times, setTimes]=useState([])
   const [texts,setTexts]=useState([])
   const BASE_URL = "https://www.lianatech.com/resources/blog.rss";
-  const CROSS_DOMAIN = 'https://cors-anywhere.herokuapp.com';
-  const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
-  const [data1,setData1]=useState("")
-  const [data2,setData2]=useState("")
-  // var dateRef=useRef(null);
-  // var textRef=useRef(null);
+  // const CROSS_DOMAIN = 'https://cors-anywhere.herokuapp.com';
+  // const cross="https://cors.bridged.cc";
+  // const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
+  const URL='https://corsproxy.io/?' + encodeURIComponent(`${BASE_URL}`);
 
-  useData(REQUEST_URL)
-  .then(
-    results=>{
-      setTimes(results.dates)
-      setTexts(results.dscrpts)
-    }
-  );
-const uniqueTimes=[...new Set(times)];
-const uniqueTexts=[...new Set(texts)];
 
-var news=[
-  {'time':"", 'text':""}
-]
-function content(){
-  for (let i=0, length=uniqueTexts.length; i< length;i++){
-   (
-    function(x,y){
-      news.time=y
-      news.text=x;
-   
-    }
-   )(uniqueTexts[i],uniqueTimes[i])
+  useData(URL)
+  .then(data=>{
+    setTimes(data.dates)
+    setTexts(data.dscrpts)
+  }
+  )
+
+let uniqueTexts=[...new Set(texts)]
+let uniqueTimes=[...new Set(times)]
+let news=[{'date': null, 'text':null}]
+
+// console.log(uniqueTimes,uniqueTexts)
+function createObj(){
+  var times=null;
+for(let i=0; i<uniqueTimes.length;i++){
+  var a=uniqueTimes[i],b=uniqueTexts[i];
+  (function(x,y){
+    times=x
+
+    news=[{"date":times, "text":y}]
+  })(a,b)
+
 }
+  
 }
-content()
+createObj();
 console.log(news)
 
 
 
 
-  return (
+return (
     <div className={styles.content}>
         <p>Latest News</p>
         <ul className={styles.wrapper}>
      
-          {
-            news.map(
-             (item)=>{return <li key={nanoid()}>
-              <p className={styles.date}>{item.time}</p>
-              <p className={styles.message}>{item.text}</p>
-             </li>}
-            )
-          }
          
         </ul>
     </div>
   )
 }
+
 
 export default Latestnews;
 

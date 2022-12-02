@@ -1,13 +1,15 @@
 import React from 'react';
-import styles from './SubNav.module.css';
+import styles from './TopNav.module.css';
 
-function SubNav() {
+function TopNav() {
   return (
-    <div className={styles.nav}>
-      <div className={styles.wrapper}>
-          <p>News</p>
-          <p>Intranet</p>
-          <div className={styles.dropdown}>
+    <div className={styles.topNav}>
+        <div className={styles.container}>
+            <ul className={styles.news}>
+                <li><a className={styles.rtop} href="javascript:;">News</a></li>
+                <li><a className={styles.rtop}  href="javascript:;">Intranet</a></li>
+            </ul>
+            <div className={styles.dropdown}>
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle"
                 type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,9 +22,11 @@ function SubNav() {
                 </ul>
             </div>
           </div>
+
+        </div>
+  
     </div>
-  </div>
   )
 }
 
-export default SubNav;
+export default TopNav;

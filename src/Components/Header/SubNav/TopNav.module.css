@@ -1,0 +1,31 @@
+.topNav{
+    background-color: #4c8930;
+   
+}
+
+.container{
+    margin: auto;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.news{
+    height: 50px;
+    display: flex;
+   align-items: center;
+
+}
+.rtop{
+    color: white;
+    align-self: center;
+    margin-right: 30px;
+    font-size: 14px;
+}
+
+.dropdown{
+    align-self: center;
+
+}

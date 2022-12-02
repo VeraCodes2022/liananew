@@ -1,5 +1,6 @@
 import React from 'react';
 import SubNav from './SubNav/SubNav';
+import TopNav from './SubNav/TopNav';
 import MainNav from './MainNav/MainNav';
 
 
@@ -7,7 +8,7 @@ import MainNav from './MainNav/MainNav';
 function Header() {
   return (
     <div>
-      <SubNav/>
+      <TopNav/>
       <MainNav/>
     </div>
   )
