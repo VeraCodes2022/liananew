@@ -6,13 +6,14 @@ import Form from 'react-bootstrap/Form';
 import styles from './Subscribe.module.css';
 
 function Subscribe() {
-
 const {email,setEmail}=useContext(AppContext);
 const redirect=useNavigate();
 
+
+
 const handleSubmit=()=>{
   email && redirect('./thank', {replace:true})
-  setEmail("")
+  // setEmail("")
 
 }
 
@@ -26,6 +27,7 @@ const handleSubmit=()=>{
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" className='sub-input'   
           value={email}  
+          onClick={e=>{e.stopPropagation()}}
           onChange={e=>{setEmail(e.target.value)}}/>
         </Form.Group>
         <Button variant="primary" type="submit" className='sub-button'>
@@ -39,4 +41,3 @@ const handleSubmit=()=>{
 
 export default Subscribe;
 
-// onClick={e=>{e.stopPropagation()}}

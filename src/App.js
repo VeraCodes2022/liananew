@@ -1,4 +1,4 @@
-import React,{createContext,useState} from 'react';
+import React,{createContext,useState,useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Thank from './Components/Subscribe/Thank';
@@ -8,7 +8,7 @@ import './App.css';
 export const AppContext=createContext(null);
 
 function App() {
-    
+
   const [email,setEmail]=useState("");
 
   return (

@@ -2,27 +2,23 @@
     padding: 0;
     margin: 0%;
 }
-.banner{
-    height: 410px;
-    width: 100%;
-    background-image: url('./banner.jpeg');
+
+.wrapper{
+    position:relative;
 }
 
+   
 .cover {
+    position: absolute;
+    left: 0;
+    top: 0;
     background-color: black;
     height: 100%;
+    width: 100%;
     background-color: hsl(0, 0%, 0%, 0.5);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.cover > h1 {
-    color:white;
-    font-size: 3rem;
-    margin-bottom: 50px;
-}
 
 .cover > button {
     width: 150px;
@@ -32,6 +28,7 @@
     font-size: 22px;
     color: white;
     background-color: #4c8930;
+    margin-top: 400px;
     align-self: center;
 }
 

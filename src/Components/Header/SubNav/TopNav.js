@@ -6,8 +6,8 @@ function TopNav() {
     <div className={styles.topNav}>
         <div className={styles.container}>
             <ul className={styles.news}>
-                <li><a className={styles.rtop} href="javascript:;">News</a></li>
-                <li><a className={styles.rtop}  href="javascript:;">Intranet</a></li>
+                <li><a className={styles.rtop} href="#">News</a></li>
+                <li><a className={styles.rtop}  href="#">Intranet</a></li>
             </ul>
             <div className={styles.dropdown}>
             <div className="dropdown">
