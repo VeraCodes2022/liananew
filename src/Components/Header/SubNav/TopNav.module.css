@@ -2,7 +2,6 @@
     background-color: #4c8930;
    
 }
-
 .container{
     margin: auto;
     height: 50px;
@@ -10,8 +9,6 @@
     display: flex;
     justify-content: flex-end;
 }
-
-
 .news{
     height: 50px;
     display: flex;
@@ -24,8 +21,16 @@
     margin-right: 30px;
     font-size: 14px;
 }
+#dropdownitembutton{
+    background-color: white;
+    color: #4c8930;
+    font-size: 12px;
+    height: 32px;
+    border-radius: 5px;
 
-.dropdown{
+ 
+}
+.btn{
     align-self: center;
-
+   
 }

@@ -5,7 +5,10 @@ export const useData= async function (url){
 
     const [dates, setDates]=useState([]);
     const [dscrpts, setDscrpts]=useState([]);
+    // const [news,setNews]=useState(null)
+   
 
+  
     useEffect(
         ()=>{
         try{
@@ -19,17 +22,21 @@ export const useData= async function (url){
                         if(items[i].getElementsByTagName("pubDate")[0].innerHTML !=="" && 
                         items[i].getElementsByTagName("description")[0].innerHTML !==""){
                             (function(y){
-                                setDates(prevDate=>(
-                                [...prevDate,y.getElementsByTagName("pubDate")[0].textContent]
+                            var news={}
+                            setDates(prevDate=>(
+                                 [...prevDate, y.getElementsByTagName("pubDate")[0].textContent] 
                                 )
-                                )
-                                setDscrpts(
+                                );
+                             setDscrpts(
                                     prevEl=>(
-                                        [...prevEl, y.getElementsByTagName("description")[0].textContent])
+                                        [...prevEl, news.text=y.getElementsByTagName("description")[0].textContent])
                                     )
-
                             })(items[i])
+
+                            
                         }
+
+                     
                     }
                  
                 }

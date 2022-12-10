@@ -1,4 +1,6 @@
 import React from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import styles from './TopNav.module.css';
 
 function TopNav() {
@@ -9,22 +11,12 @@ function TopNav() {
                 <li><a className={styles.rtop} href="#">News</a></li>
                 <li><a className={styles.rtop}  href="#">Intranet</a></li>
             </ul>
-            <div className={styles.dropdown}>
-            <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle"
-                type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Language
-                </button>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">In English</a></li>
-                  <li><a className="dropdown-item" href="#">In Finnish</a></li>
-                  <li><a className="dropdown-item" href="#">In Swedish</a></li>
-                </ul>
-            </div>
-          </div>
-
+            <DropdownButton id={styles.dropdownitembutton} title="Language" className={styles.btn}>
+              <Dropdown.ItemText>English</Dropdown.ItemText>
+              <Dropdown.Item as="button">Finnish</Dropdown.Item>
+              <Dropdown.Item as="button">Swedish</Dropdown.Item>
+            </DropdownButton>
         </div>
-  
     </div>
   )
 }

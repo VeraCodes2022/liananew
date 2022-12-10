@@ -27,32 +27,3 @@ img{
 }
 
 
-
-.form{
-  width: 380px;
-  height: 35px;
-  margin: auto;
-}
-
-.mb-3{
-  width: 300px;
-  float: left;
-}
-.sub-input{
-  width: 300px;
-  border-radius: 0;
-  height: 35px;
-}
-
-.sub-button{
-  width:80px;
-  float: left;
-  border-radius: 0;
-  height: 35px;
-  text-align: center;
-  background-color: green;
-  border: none;
-
-}
-
-.clear{clear: both;}

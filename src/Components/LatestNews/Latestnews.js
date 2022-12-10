@@ -3,12 +3,10 @@ import styles from './Latestnews.module.css';
 import  {useData}  from '../Public/useData';
 import { nanoid } from 'nanoid';
 
-
-
 function Latestnews() {
 
-  const [times, setTimes]=useState([])
-  const [texts,setTexts]=useState([])
+  const [times, setTimes]=useState("")
+  const [texts,setTexts]=useState("")
   const BASE_URL = "https://www.lianatech.com/resources/blog.rss";
   const URL='https://corsproxy.io/?' + encodeURIComponent(`${BASE_URL}`);
 
@@ -18,18 +16,33 @@ function Latestnews() {
     setTexts(data.dscrpts)
   })
 
-// Array deduplication
-const uniqueDates=[...new Set(times)]
-const uniqueTexts= [...new Set(texts)]
 
+let uniqueDates=[...new Set(times)]
+let uniqueTexts= [...new Set(texts)]
+let news=[]
+const getNews=()=>{
+  for( var i=0;i<uniqueDates.length;i++){
+    var dates=uniqueDates[i].split(' ');
+    var pubDates=dates.slice(0,4).join(' ');
+    var description=uniqueTexts[i];
+    news.push({pubDates,description})
+}
 
-console.log(uniqueDates,uniqueTexts)
+}
+getNews()
 
 
 return (
     <div className={styles.content}>
         <p>Latest News</p>
         <ul className={styles.wrapper}>
+            {news.slice(0,3).map(
+              item=>(<li key={nanoid()}  className={styles.newslist}>
+                <p className={styles.date}>{item.pubDates}</p>
+                <p className={styles.message}>{item.description}</p>
+              </li>)
+            )}
+  
         </ul>
     </div>
   )

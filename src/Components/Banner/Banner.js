@@ -14,17 +14,11 @@ function Banner() {
   }) 
 
   return (
-    // <div className={`${styles.banner} ${styles.href=""}`}>
-    //   <div className={styles.cover}>
-    //     <h1>Software Fueling Digital Marketing</h1>
-    //     <button>Learn More</button>
-    //   </div>
-    // </div>
+
     <center>
       <div className={styles.wrapper}>
           <img src={imgUrl} alt="" className={styles.banner}/>
           <div className={styles.cover}>
-            {/* <h1>Software Fueling Digital Marketing</h1> */}
             <button>Learn More</button>
           </div> 
 

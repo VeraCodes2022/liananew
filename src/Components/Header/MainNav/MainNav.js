@@ -51,7 +51,6 @@ function MainNav() {
                </NavDropdown>
                </li>
             <li>
-               {/* <a href='./'>Contact Us</a> */}
                <NavDropdown title="Contact" id="collasible-nav-dropdown" 
                show={contact} onMouseEnter={showContact} 
                onMouseLeave={hideContact}>

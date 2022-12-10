@@ -7,7 +7,10 @@
     position:relative;
 }
 
-   
+.banner{
+    width: 85%;
+    height: 500px;
+}
 .cover {
     position: absolute;
     left: 0;
@@ -17,6 +20,7 @@
     width: 100%;
     background-color: hsl(0, 0%, 0%, 0.5);
     text-align: center;
+    
 }
 
 
@@ -28,7 +32,7 @@
     font-size: 22px;
     color: white;
     background-color: #4c8930;
-    margin-top: 400px;
+    margin-top: 280px;
     align-self: center;
 }
 
@@ -36,7 +40,8 @@
 @media screen and (max-width:800px){
 
     .banner{
-        height: 200px;
+        width: 100%;
+        height: 250px;
     }
 
     .cover > h1 {
@@ -44,11 +49,16 @@
         font-size: 1.5rem;
         margin-bottom: 50px;
     }
+
+
     .cover > button {
         width: 80px;
         height: 20px;
         border: none;
         border-radius: 5px;
         font-size: 12px;
+        margin-top: 135px;
+       
+       
     }
 }

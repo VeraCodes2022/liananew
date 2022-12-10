@@ -22,16 +22,39 @@ width: 360px;
 height: 30px;
 font-size: 16px;
 }
-.btn{
-height: 33px;
-font-size: 16px;
-width: 120px;
-border: none;
-color:white;
-background-color: #4c8930;
-border-radius: 5px;
-margin-left: 10px;
+
+.mb-3{
+    width: 300px;
 }
+
+
+.form{
+    width: 422px;
+    height: 35px;
+    margin: auto;
+  }
+  
+  .subinput{
+    width: 300px;
+    border-radius: 0;
+    height: 35px;
+    float: left;
+
+  }
+  
+  .subutton{
+    width:120px;
+    float: left;
+    border-radius: 0;
+    height: 35px;
+    text-align: center;
+    background-color: green;
+    border: none;
+  
+  }
+  
+  .clear{clear: both;}
+  
 
 @media screen and (max-width:800px){
 
