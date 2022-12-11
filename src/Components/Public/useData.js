@@ -1,14 +1,11 @@
-import {useEffect,useState} from "react"; 
 // this customized hook is for fetching dates' and descriptions' innerHTML from item tags from the given  API
+import {useEffect,useState} from "react"; 
 
 export const useData= async function (url){
 
     const [dates, setDates]=useState([]);
     const [dscrpts, setDscrpts]=useState([]);
-    // const [news,setNews]=useState(null)
-   
 
-  
     useEffect(
         ()=>{
         try{
@@ -33,10 +30,7 @@ export const useData= async function (url){
                                     )
                             })(items[i])
 
-                            
                         }
-
-                     
                     }
                  
                 }

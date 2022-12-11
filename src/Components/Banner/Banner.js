@@ -8,6 +8,8 @@ function Banner() {
   const BASE_URL = "https://www.lianatech.com/resources/blog.rss";
   const URL='https://corsproxy.io/?' + encodeURIComponent(`${BASE_URL}`);
 
+
+// call the customized hook to fetch banner's src from the given API
   useHook(URL)
   .then(data=>{
     setImgUrl(data.imgSrc)

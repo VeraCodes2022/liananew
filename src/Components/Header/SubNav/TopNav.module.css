@@ -21,16 +21,18 @@
     margin-right: 30px;
     font-size: 14px;
 }
-#dropdownitembutton{
-    background-color: white;
-    color: #4c8930;
-    font-size: 12px;
+/* #dropdownitembutton{
+    background-color:#4c8930;
+    color: white;
+    font-size: 14px;
     height: 32px;
-    border-radius: 5px;
+    border:none;
 
  
-}
+} */
 .btn{
     align-self: center;
+    color: white;
+    font-size: 14px;
    
 }
